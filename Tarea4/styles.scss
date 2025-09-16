@@ -1,0 +1,27 @@
+
+$color-principal: #3498db;
+$color-secundario: #2ecc71;
+$fuente: Arial, sans-serif;
+
+
+@mixin borde-redondeado($radio) {
+  border-radius: $radio;
+}
+
+
+body {
+  font-family: $fuente;
+  background-color: #f5f5f5;
+  margin: 20px;
+
+  h1 {
+    color: $color-principal;
+  }
+
+  p {
+    color: $color-secundario;
+    @include borde-redondeado(10px);
+    padding: 10px;
+    background: white;
+  }
+}

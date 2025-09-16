@@ -1,0 +1,59 @@
+
+@primary-color: #3498db;
+@secondary-color: #2ecc71;
+@font-stack: "Arial", sans-serif;
+@border-radius: 5px;
+
+
+// 🧩 Mixins
+.border-radius(@radius) {
+    border-radius: @radius;
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+}
+
+
+// 📦 Estilos para el contenedor principal
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: @primary-color;
+    color: white;
+    .border-radius(@border-radius);
+}
+
+// Estilos para el encabezado
+header {
+    background-color: @secondary-color;
+    padding: 10px 0;
+    text-align: center;
+
+    h1 {
+        font-family: @font-stack;
+        font-size: 2em;
+        margin: 0;
+    }
+}
+
+// Estilos para el contenido principal
+main {
+    margin: 20px 0;
+
+    p {
+        line-height: 1.6;
+    }
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: @primary-color;
+    text-decoration: none;
+    .border-radius(@border-radius);
+
+    &:hover {
+        background-color: darken(@primary-color, 10%);
+    }
+}
