@@ -1,0 +1,45 @@
+/*Primera forma
+.grid{
+    display: grid;
+    /*Separa en columna  
+    grid-template-columns: 50px 300px;
+    /*Los separa en filas
+    grid-template-rows: 200px 75px;
+}*/
+
+/*Otra forma
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+}*/
+
+/*Grid Por areas*/
+.grid{
+    display: grid;
+    grid-template-areas:"head head"
+                        "menu main"
+                        "foot foot";
+
+    /*Separa en horizontal el menu y main*/
+    column-gap: 100px;
+
+    /*Separa todas las filas*/
+    row-gap: 10px;
+}
+.a{
+    grid-area:head;
+    background-color: blue;
+}
+.b{
+    grid-area:menu;
+    background-color: red;
+}
+.c{
+    grid-area:main;
+    background-color: green;
+}
+.d{
+    grid-area:foot;
+    background-color: orange;
+}

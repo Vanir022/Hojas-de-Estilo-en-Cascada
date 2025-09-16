@@ -1,0 +1,194 @@
+/* RESETEAR ESTILOS BÁSICOS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ===== ENCABEZADO CON FLEXBOX ===== */
+/* Flexbox pone las cosas en una fila horizontal */
+header {
+    display: flex; /* Hace que los elementos se pongan en fila */
+    justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
+    align-items: center; /* Centra verticalmente */
+    padding: 20px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* El menú también usa flexbox para poner los enlaces en fila */
+nav {
+    display: flex;
+    gap: 30px; /* Espacio entre cada enlace */
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #666;
+}
+
+/* ===== SECCIÓN PRINCIPAL CON GRID ===== */
+/* Grid nos permite hacer 2 columnas fácilmente */
+.seccion-principal {
+    display: grid; /* Activa el sistema de cuadrícula */
+    grid-template-columns: 1fr 2fr; /* Columna 1 pequeña, columna 2 más grande */
+    gap: 40px; /* Espacio entre columnas */
+    align-items: center; /* Centra el contenido verticalmente */
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto; /* Centra todo el contenido */
+}
+
+/* Columna izquierda: imagen */
+.columna-imagen {
+    text-align: center;
+}
+
+.columna-imagen img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Hace la imagen redonda */
+    border: 3px solid #ddd;
+}
+
+/* Columna derecha: información */
+.columna-info h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.columna-info h2 {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.columna-info p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.columna-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.columna-info ul {
+    list-style: none;
+}
+
+.columna-info li {
+    padding: 5px 0;
+    color: #666;
+}
+
+.columna-info li:before {
+    content: "• ";
+    color: #999;
+}
+
+/* ===== GALERÍA DE PROYECTOS CON GRID ===== */
+.galeria-proyectos {
+    padding: 60px 20px;
+    background: #f8f8f8;
+}
+
+.galeria-proyectos h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+/* Grid para organizar los proyectos en 3 columnas */
+.contenedor-proyectos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 30px; /* Espacio entre tarjetas */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Cada tarjeta de proyecto */
+.tarjeta-proyecto {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden; /* Esconde las esquinas de la imagen */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.tarjeta-proyecto img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover; /* Ajusta la imagen al contenedor */
+}
+
+.tarjeta-proyecto h3 {
+    padding: 20px;
+    font-size: 18px;
+    text-align: center;
+    color: #333;
+}
+
+/* ===== PIE DE PÁGINA CON FLEXBOX ===== */
+footer {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    padding: 40px;
+    background: #333;
+    color: white;
+}
+
+/* ===== DISEÑO RESPONSIVE (PARA MÓVILES) ===== */
+/* Cuando la pantalla sea menor a 768px */
+@media (max-width: 768px) {
+    /* El header se vuelve vertical */
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    /* La sección principal se vuelve 1 columna */
+    .seccion-principal {
+        grid-template-columns: 1fr; /* Solo 1 columna */
+        text-align: center;
+    }
+    
+    /* Los proyectos se vuelven 2 columnas */
+    .contenedor-proyectos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    /* Los proyectos se vuelven 1 columna */
+    .contenedor-proyectos {
+        grid-template-columns: 1fr;
+    }
+    
+    .columna-info h1 {
+        font-size: 28px;
+    }
+}
