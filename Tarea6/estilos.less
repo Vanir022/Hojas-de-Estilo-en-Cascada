@@ -1,0 +1,70 @@
+// Variables
+@color-principal: #3498db;
+@color-secundario: #2ecc71;
+@padding-base: 10px;
+@font-size-base: 16px;
+
+
+
+// Mixin para botoones
+.boton-estilo(@bg, @color, @padding) {
+	background: @bg;
+	color: @color;
+	padding:@padding;
+	border: none;
+	border-radius: 5px;
+	font-size: @font-size-base + 2;
+	cursor: pointer;
+	transition: background 0.3s;
+	&:hover {
+		background: darken(@bg, 10%);
+	}
+}
+
+body {
+	background: lighten(@color-principal, 40%);
+	font-family:Arial, sans-serif;
+	font-size: @font-size-base;
+	margin:0;
+	padding:@padding-base * 2;
+
+	h1 {
+		color: @color-principal;
+		margin-bottom: @padding-base;
+		text-align: center;
+	}
+
+	.contenedor {
+		background: white;
+		border-radius: 8px;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+		padding: @padding-base * 3;
+		max-width: 400px;
+		margin: 30px auto;
+
+		p {
+			color: @color-secundario;
+			margin-bottom: @padding-base;
+		}
+
+		button {
+			.boton-estilo(@color-principal, white, @padding-base * 1.5);
+		}
+	}
+    
+    
+}
+
+.contenedor-imagen{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-top: 20px;               
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+}
